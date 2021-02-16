@@ -23,7 +23,8 @@ Post.create([
     {img_src:"http://www.everything-mousey-pins.com/assets/images/winnie-pooh-propin-3836353r3rfe5e64yh3.JPG" , caption: "honey pot🍯🤗", user: pooh},
     {img_src:"https://i.ytimg.com/vi/nSdz5ln2rME/hqdefault.jpg" , caption: "Leafy greens🥗💪🏼", user: popeye},
     {img_src:"https://i.ytimg.com/vi/nSdz5ln2rME/hqdefault.jpg" , caption: "Icecream🍦💕", user: minnie},
-    {img_src:"http://clipground.com/images/mickey-mouse-eating-clipart-4.gif", caption: "Sandwich🥪", user: mickey}
+    {img_src:"http://clipground.com/images/mickey-mouse-eating-clipart-4.gif", caption: "Sandwich🥪", user: mickey}, 
+    {img_src:"http://3.bp.blogspot.com/-zDak8pI7o-8/Th-gaQSxzCI/AAAAAAAAAMo/Fxvck5oX6mM/s1600/Pooh_Hunny_1_RGB.jpg", caption: "i love honey", user: pooh}
 ])
 
 
