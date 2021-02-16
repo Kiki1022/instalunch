@@ -4,14 +4,17 @@ class Api::V1::PostsController < ApplicationController
   # GET /posts
   def index
     @posts = Post.all
-
-    render json: @posts
+    options = {
+      include: [:user]
+    }
+    #render json: @posts
+    render json: PostSerializer.new(@posts, options)
   end
 
   # GET /posts/1
-  def show
-    render json: @post
-  end
+  # def show
+  #   render json: @post
+  # end
 
   # POST /posts
   def create
@@ -25,13 +28,13 @@ class Api::V1::PostsController < ApplicationController
   end
 
   # PATCH/PUT /posts/1
-  def update
-    if @post.update(post_params)
-      render json: @post
-    else
-      render json: @post.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @post.update(post_params)
+  #     render json: @post
+  #   else
+  #     render json: @post.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /posts/1
   def destroy
