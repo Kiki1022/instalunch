@@ -4,6 +4,7 @@ class User {
         this.name = name
     }
 
+  
 //render user instance method
 
 renderUser() {
@@ -11,9 +12,10 @@ renderUser() {
 
     usersDiv.innerHTML +=
     `
-    <ul>
-    <li>Name: ${this.name}</li>
-    </ul>
+    
+    <p>Name ${this.name}<p>
+    
+    <button class="create-post" data-id=${this.id}>Create My Lunch Wish</button>
     `
 }
 }
