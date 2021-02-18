@@ -3,18 +3,18 @@ class Api::V1::PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.all
-    options = {
-      include: [:user]
-    }
+    @posts = Post.all.order_by_created_at
+    # options = {
+    #   include: [:user]
+    # }
     #render json: @posts
-    render json: PostSerializer.new(@posts, options)
+    render json: PostSerializer.new(@posts)
   end
 
-  # GET /posts/1
-  # def show
-  #   render json: @post
-  # end
+  #GET /posts/1
+  def show
+    render json: @post
+  end
 
   # POST /posts
   def create
@@ -37,9 +37,9 @@ class Api::V1::PostsController < ApplicationController
   # end
 
   # DELETE /posts/1
-  def destroy
-    @post.destroy
-  end
+  # def destroy
+  #   @post.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -49,6 +49,6 @@ class Api::V1::PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:img_src, :caption)
+      params.require(:post).permit(:username, :img_src, :caption, :created_at, :cuisine_id)
     end
 end
