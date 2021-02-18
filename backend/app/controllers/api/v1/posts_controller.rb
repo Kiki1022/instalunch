@@ -49,6 +49,6 @@ class Api::V1::PostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:username, :img_src, :caption, :created_at, :cuisine_id)
+      params.require(:post).permit(:username, :img_src, :caption, :created_at, :cuisine_id, :cuisine_name)
     end
 end

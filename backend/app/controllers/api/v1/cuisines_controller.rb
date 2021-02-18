@@ -1,6 +1,4 @@
-class CuisinesController < ApplicationController::API
-    
-    
+class Api::V1::CuisinesController < ApplicationController
     
     def index
         cuisines = Cuisine.all
