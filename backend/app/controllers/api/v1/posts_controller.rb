@@ -1,5 +1,6 @@
 class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
+ 
 
   # GET /posts
   def index
@@ -18,8 +19,8 @@ class Api::V1::PostsController < ApplicationController
 
   # POST /posts
   def create
+  
     @post = Post.new(post_params)
-
     if @post.save
       render json: @post, status: :created, location: @post
     else
@@ -36,10 +37,10 @@ class Api::V1::PostsController < ApplicationController
   #   end
   # end
 
-  # DELETE /posts/1
-  # def destroy
-  #   @post.destroy
-  # end
+  def destroy
+    @post.destroy
+    render json: @post
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -48,7 +49,10 @@ class Api::V1::PostsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
+
     def post_params
       params.require(:post).permit(:username, :img_src, :caption, :created_at, :cuisine_id, :cuisine_name)
     end
+
+   
 end
