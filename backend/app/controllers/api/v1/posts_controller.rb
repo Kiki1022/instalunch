@@ -1,8 +1,8 @@
 class Api::V1::PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
- 
+  #before_save :strftime
 
-  # GET /posts
+  # GET /posts 
   def index
     @posts = Post.all.order_by_created_at
     # options = {
