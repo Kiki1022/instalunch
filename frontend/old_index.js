@@ -11,12 +11,12 @@ const render = (html) => {
     
 }
 
-const BASE_URL = "http://localhost:3000"
+const USERS_URL = "http://localhost:3000/api/v1/users"
     //read
     // create
     // delete
     function fetchUsers(){
-        fetch(`${BASE_URL}/users/new`)
+        fetch(USERS_URL)
         .then(resp => resp.json())
         .then(users => {
             for (const user of users) {

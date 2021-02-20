@@ -13,9 +13,9 @@ renderUser() {
     usersDiv.innerHTML +=
     `
     
-    <p>Name ${this.name}<p>
+    <p>Hi ${this.name}!<p>
     
-    <button class="create-post" data-id=${this.id}>Create My Lunch Wish</button>
+
     `
 }
 }

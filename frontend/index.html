@@ -1,6 +1,6 @@
 <head>
     <title>InstaLunch</title>
-    
+    <link rel="stylesheet" href="style.css" />
     <script src = "src/user.js"></script>
     <script src = "src/post.js"></script>
     <script src = "src/service.js"></script>
@@ -11,31 +11,52 @@
 
 <body>
     <div id="main">
-<form>
-    <h3>Welcome to InstaLunch where fellow foodies can share their best food moments!<h3>
-        <p>Create or enter your existing username <input type="text" name="name"><p>
-  
-    <button type="submit" type="submit">Submit</button>
-</form>
-<br><br>
+        <div id="users-form">
 
-<div id="create-post-form">
-    <form>
-        <h3>Welcome to InstaLunch where fellow foodies can share their best food moments!<h3>
-            <p>Create your username <input id='input-name' type="text" name="name"><p>
+        </div>
 
-        <h3>Create your post!</h3>
+        <div id="users-container">
+            
+        </div>
 
-            <input id='img-src' type="text" name="img_src" placeholder="your food image URL...">
-            <br><br>
-            <textarea id='input-caption' name=caption rows="4" cols="40" placeholder="your caption..."></textarea>
-            <br><br>
-            <button type="submit" type="submit">Submit Post</button>
-</form>
+    <div class="container">
+        <div id="create-post-form">
+            <form>
+                <h1>Welcome to InstaLunch!<h3>
+                <h1>Create your post!</h3>
 
-</div>
+                    <h2>Username <input id='input-name' type="text" name="username"><h2>
+                        <input id='img-src' type="text" name="img_src" placeholder="your food image URL...">
+                        <br><br>
+                        <textarea id='input-caption' name=caption rows="4" cols="40" placeholder="your caption..."></textarea>
+                        <br><br>
+                        <p>Cuisine</p>
+                        <select id="cuisine" name="cuisine">
+                            <option value="1">American</option>
+                            <option value="2">Indian</option>
+                            <option value="3">Japanese</option>
+                            <option value="4">Mexican</option>
+                            <option value="5">Italian</option>
+                            <option value="6">Dessert</option>
+                            <option value="7">Other</option>
+                          </select>
+                          <br><br>
+                        <br><br>
+                    <button type="submit" type="submit">Submit Post</button>
+                   
+            </form>
+
+        </div>
     </div>
-<div id="post-container">
 
-</div>
+    <div class="card">
+
+        <div id="post-container">
+
+     
+
+        </div>
+
+    </div>
+
 </body>
