@@ -1,3 +1,4 @@
+
 class Post {
    
     constructor(post, postAttributes){
@@ -13,6 +14,10 @@ class Post {
         Post.all.push(this)
      
     }
+    
+    // static createPost(){
+
+    // }
     
     renderPostCard() {
         return `
@@ -30,6 +35,6 @@ class Post {
        
     }
 }
-Post.all = []//needs to be in global scope
+Post.all = []
 
 

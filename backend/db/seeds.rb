@@ -9,12 +9,6 @@ italian = Cuisine.create({name: "Italian"})
 dessert = Cuisine.create({name: "Dessert"})
 other = Cuisine.create({name: "Other"})
 
-# pooh = User.create({name: "hunny_bear"})
-# popeye = User.create({name: "the_vegan_sailor"})
-# minnie = User.create({name:"miss_minnie"})
-# mickey = User.create({name:"mickey_1111"})
-# snoopy = User.create({name:"snoop_dog"})
-
 Post.create([
    
     {username: "the_vegan_sailor", img_src:"https://i.ytimg.com/vi/nSdz5ln2rME/hqdefault.jpg" , caption: "Leafy greens..duh!🥗💪🏼", cuisine: other},

@@ -1,15 +1,12 @@
 const endPoint = "http://localhost:3000/api/v1/posts"
 
 document.addEventListener('DOMContentLoaded', () => {
-
     getPosts()
     mountFormListener()
     
     const createPostForm = document.getElementById("create-post-form")
 
     createPostForm.addEventListener("submit", (e) => createFormHandler(e))
-
-
 })
 
 function getPosts(){
@@ -17,11 +14,11 @@ function getPosts(){
     .then(response => response.json())
     .then(posts =>{
         posts.data.forEach(post => {
-           //debugger
+
             let newPost = new Post(post, post.attributes)
             
             document.querySelector('#post-container').innerHTML += newPost.renderPostCard()
-            //render(post)
+            
         })
     })
 }
@@ -47,7 +44,11 @@ function getPosts(){
         })
             .then(response => response.json())
             .then(post => {
-                render(post.data)
+                const postData = post.data
+                let newPost = new Post(postData, postData.attributes)
+            
+                document.querySelector('#post-container').innerHTML += newPost.renderPostCard()
+               
             })
     }
 
@@ -60,10 +61,12 @@ function getPosts(){
     }
     function mountFormListener(){
         document.querySelector('#post-container').addEventListener('click', function(e){
-            console.log("CLICKED")
+            //console.log("CLICKED")
+            if (e.target.className === "delete"){
            
-          //const id = e.target.parentElement.id
           deletePostFetch(e)
-          e.target.parentElement.remove() //updates dom by removing parent element
+          e.target.parentElement.remove() 
+         }
         })
+    
     }
