@@ -9,9 +9,6 @@ async function createPost(e){
     const cuisine_id = parseInt(cuisineInput.value)
     const cuisineName = cuisineInput.options[cuisineInput.selectedIndex].textContent
 
-
-
-
     const API = new ApiService()   
     const post = await API.newPost({username, caption, img_src, cuisine_id})
 
@@ -24,5 +21,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     postList.render()
     postList.mount()
     console.log(postList)
-
 })

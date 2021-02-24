@@ -35595,3 +35595,87 @@ Processing by Api::V1::PostsController#create as */*
 Completed 200 OK in 69ms (Views: 0.5ms | ActiveRecord: 57.5ms | Allocations: 3780)
 
 
+Started GET "/api/v1/posts" for ::1 at 2021-02-23 21:52:55 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+  [1m[36mCuisine Load (0.5ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:13:in `index'
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 1.9ms | Allocations: 13399)
+
+
+Started POST "/api/v1/posts" for ::1 at 2021-02-23 21:53:01 -0500
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"username"=>"skittles123", "caption"=>"", "img_src"=>"https://i.pinimg.com/originals/fa/24/64/fa2464e36b98b2b1311f69d90e27af86.png", "cuisine_id"=>3, "post"=>{"username"=>"skittles123", "img_src"=>"https://i.pinimg.com/originals/fa/24/64/fa2464e36b98b2b1311f69d90e27af86.png", "caption"=>"", "cuisine_id"=>3}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:23:in `create'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:23:in `create'
+  [1m[36mPost Create (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("username", "img_src", "caption", "cuisine_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "skittles123"], ["img_src", "https://i.pinimg.com/originals/fa/24/64/fa2464e36b98b2b1311f69d90e27af86.png"], ["caption", ""], ["cuisine_id", 3], ["created_at", "2021-02-24 02:53:01.057963"], ["updated_at", "2021-02-24 02:53:01.057963"]]
+  ↳ app/controllers/api/v1/posts_controller.rb:23:in `create'
+  [1m[35m (93.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:23:in `create'
+Completed 200 OK in 106ms (Views: 0.7ms | ActiveRecord: 95.7ms | Allocations: 4491)
+
+
+Started DELETE "/api/v1/posts/11" for ::1 at 2021-02-23 21:53:06 -0500
+Processing by Api::V1::PostsController#destroy as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:49:in `set_post'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:42:in `destroy'
+  [1m[36mPost Destroy (1.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/api/v1/posts_controller.rb:42:in `destroy'
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:42:in `destroy'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 13.3ms | Allocations: 3685)
+
+
+Started DELETE "/api/v1/posts/10" for ::1 at 2021-02-23 21:53:08 -0500
+Processing by Api::V1::PostsController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:49:in `set_post'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:42:in `destroy'
+  [1m[36mPost Destroy (2.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/posts_controller.rb:42:in `destroy'
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:42:in `destroy'
+Completed 200 OK in 26ms (Views: 0.5ms | ActiveRecord: 15.8ms | Allocations: 2616)
+
+
+Started DELETE "/api/v1/posts/9" for ::1 at 2021-02-23 21:53:10 -0500
+Processing by Api::V1::PostsController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:49:in `set_post'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:42:in `destroy'
+  [1m[36mPost Destroy (1.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/api/v1/posts_controller.rb:42:in `destroy'
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:42:in `destroy'
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 18.7ms | Allocations: 2622)
+
+
