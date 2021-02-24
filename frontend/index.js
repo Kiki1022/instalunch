@@ -1,72 +1,28 @@
-const endPoint = "http://localhost:3000/api/v1/posts"
+let postList;
+async function createPost(e){
+    console.log("form submitted")
+    e.preventDefault()
+    const username = document.querySelector('#input-name').value
+    const caption = document.querySelector('#input-caption').value
+    const img_src = document.getElementById("img-src").value
+    const cuisineInput = document.querySelector('#cuisine')
+    const cuisine_id = parseInt(cuisineInput.value)
+    const cuisineName = cuisineInput.options[cuisineInput.selectedIndex].textContent
 
-document.addEventListener('DOMContentLoaded', () => {
-    getPosts()
-    mountFormListener()
-    
-    const createPostForm = document.getElementById("create-post-form")
 
-    createPostForm.addEventListener("submit", (e) => createFormHandler(e))
-})
 
-function getPosts(){
-    fetch(endPoint)
-    .then(response => response.json())
-    .then(posts =>{
-        posts.data.forEach(post => {
 
-            let newPost = new Post(post, post.attributes)
-            
-            document.querySelector('#post-container').innerHTML += newPost.renderPostCard()
-            
-        })
-    })
+    const API = new ApiService()   
+    const post = await API.newPost({username, caption, img_src, cuisine_id})
+
+    postList.add(post, {name: cuisineName})
 }
-    
-    function createFormHandler(e) {
-        console.log("form submitted")
-        e.preventDefault()
-        const userNameInput = document.querySelector('#input-name').value
-        const captionInput = document.querySelector('#input-caption').value
-        const imageInput = document.getElementById("img-src").value
-        const cuisineInput = document.querySelector('#cuisine').value
-        const cuisineId = parseInt(cuisineInput)
-        postFetch(userNameInput, captionInput, imageInput, cuisineId)
-    }
+document.addEventListener('DOMContentLoaded', async () => {
+    const createPostForm = document.getElementById("create-post-form")
+    createPostForm.addEventListener("submit", createPost)
+    postList = await PostList.get('#post-container')
+    postList.render()
+    postList.mount()
+    console.log(postList)
 
-    function postFetch(username, caption, img_src, cuisine_id){
-        const bodyData = {username, caption, img_src, cuisine_id}
-
-        fetch(endPoint, {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify(bodyData)
-        })
-            .then(response => response.json())
-            .then(post => {
-                const postData = post.data
-                let newPost = new Post(postData, postData.attributes)
-            
-                document.querySelector('#post-container').innerHTML += newPost.renderPostCard()
-               
-            })
-    }
-
-    function deletePostFetch(e){
-        
-        fetch(`http://localhost:3000/api/v1/posts/${e.target.dataset.id}`, {
-            method: 'DELETE'
-     
-        })
-    }
-    function mountFormListener(){
-        document.querySelector('#post-container').addEventListener('click', function(e){
-            //console.log("CLICKED")
-            if (e.target.className === "delete"){
-           
-          deletePostFetch(e)
-          e.target.parentElement.remove() 
-         }
-        })
-    
-    }
+})

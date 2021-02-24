@@ -4,9 +4,10 @@ class Api::V1::PostsController < ApplicationController
 
 
   def index
+   # binding.pry
     @posts = Post.all.order_by_created_at
     # options = {
-    #   include: [:user]
+    #   include: [:cuisine]
     # }
     #render json: @posts
     render json: PostSerializer.new(@posts)
@@ -17,10 +18,12 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-  
+    #binding.pry
     @post = Post.new(post_params)
     if @post.save
-      render json: @post, status: :created, location: @post
+      #binding.pry
+      render json: @post
+      #binding.pry
     else
       render json: @post.errors, status: :unprocessable_entity
     end
@@ -48,7 +51,8 @@ class Api::V1::PostsController < ApplicationController
 
 
     def post_params
-      params.require(:post).permit(:username, :img_src, :caption, :created_at, :cuisine_id, :cuisine_name)
+     #binding.pry
+      params.require(:post).permit( :username, :img_src, :caption, :created_at, :cuisine_id)
     end
 
    
