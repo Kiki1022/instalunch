@@ -27,8 +27,7 @@ class Post {
                 <button data-id=${this.id} id="delete-button" class="delete">delete</button>
             </div>
         <br><br>
-        `
-       
+        `   
     }
 }
 Post.all = []
