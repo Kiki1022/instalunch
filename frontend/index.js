@@ -1,6 +1,5 @@
 let postList;
 async function createPost(e){
-    console.log("form submitted")
     e.preventDefault()
     const username = document.querySelector('#input-name').value
     const caption = document.querySelector('#input-caption').value
@@ -20,5 +19,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     postList = await PostList.get('#post-container')
     postList.render()
     postList.mount()
-    console.log(postList)
+    //console.log(postList)
 })
