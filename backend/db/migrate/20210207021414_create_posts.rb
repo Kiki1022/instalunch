@@ -4,7 +4,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :img_src
       t.text :caption
-      #t.belongs_to :cuisine
       t.references :cuisine, null: false, foreign_key: true
       t.timestamps
     end
