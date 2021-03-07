@@ -1,4 +1,3 @@
-
 class Post {
    
     constructor(post, postAttributes = {}){
@@ -10,8 +9,6 @@ class Post {
         this.caption = postAttributes.caption || post.caption
         this.cuisine = postAttributes.cuisine || post.cuisine
         this.created_at = postAttributes.created_at || post.created_at
-
-        Post.all.unshift(this)
      
     }
 
@@ -30,6 +27,6 @@ class Post {
         `   
     }
 }
-Post.all = []
+
 
 
