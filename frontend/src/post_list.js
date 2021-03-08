@@ -15,29 +15,35 @@ class PostList {
         const cuisineName = cuisineInput.options[cuisineInput.selectedIndex].textContent
         const postForm = document.querySelector("#post-form")
         const API = new ApiService()   
-        const post = await API.newPost({username, caption, img_src, cuisine_id})//wait to crfeate a new post on server
+        const post = await API.newPost({username, caption, img_src, cuisine_id})//wait to create a new post on server
     
         this.add(post, {name: cuisineName})
         postForm.reset()
     }
-    
+
+    static async create(container){ 
+        const API = new ApiService()
+        const res = await API.fetchPosts() 
+        const posts = res.map(post => new Post(post, post.attributes)) 
+        return new PostList(posts, container) 
+    }
+
      add(post, cuisine){
         const newPost = new Post(post, {cuisine}) 
         this.all.unshift(newPost)
         this.render()
     }
 
+    render(){     
+        this.container.innerHTML = "" 
+        this.posts.forEach( post => this.container.innerHTML += post.renderPostCard())
+
+    }
+
     async delete(id){
         const API = new ApiService()
         await API.deletePost(id)
         this.posts = this.posts.filter(post => post.id !== id) 
-
-    }
-
-    render(){
-        
-        this.container.innerHTML = "" 
-        this.posts.forEach(post => this.container.innerHTML += post.renderPostCard())
 
     }
 
@@ -49,15 +55,5 @@ class PostList {
                 e.target.parentElement.remove() 
             }
         })
-    } 
-
-    static async create(container){ 
-        const API = new ApiService()
-        const res = await API.fetchPosts() 
-        const posts = res.map(post => new Post(post, post.attributes)) 
-        return new PostList(posts, container) 
-    }
-
-
-  
+    }    
 }
