@@ -5,5 +5,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     createPostForm.addEventListener("submit",(e) => postList.newPost(e))
     postList.render()
     postList.mount()
-    
 })

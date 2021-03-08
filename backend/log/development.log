@@ -42810,3 +42810,396 @@ Processing by Api::V1::PostsController#destroy as */*
 Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 11.7ms | Allocations: 3312)
 
 
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 12:02:06 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (1.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.6ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 3.0ms | Allocations: 9736)
+
+
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 21:48:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.5ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 84ms (Views: 39.9ms | ActiveRecord: 1.8ms | Allocations: 18204)
+
+
+Started POST "/api/v1/posts" for ::1 at 2021-03-07 21:48:20 -0500
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"username"=>"skittles123", "caption"=>"lkmlklkmlk;mlkm", "img_src"=>"https://www.cookingclassy.com/wp-content/uploads/2018/08/enchiladas-12.jpg", "cuisine_id"=>1, "post"=>{"username"=>"skittles123", "img_src"=>"https://www.cookingclassy.com/wp-content/uploads/2018/08/enchiladas-12.jpg", "caption"=>"lkmlklkmlk;mlkm", "cuisine_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[36mPost Create (2.1ms)[0m  [1m[32mINSERT INTO "posts" ("username", "img_src", "caption", "cuisine_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "skittles123"], ["img_src", "https://www.cookingclassy.com/wp-content/uploads/2018/08/enchiladas-12.jpg"], ["caption", "lkmlklkmlk;mlkm"], ["cuisine_id", 1], ["created_at", "2021-03-08 02:48:20.387679"], ["updated_at", "2021-03-08 02:48:20.387679"]]
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[35m (101.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+Completed 200 OK in 116ms (Views: 0.4ms | ActiveRecord: 104.1ms | Allocations: 4045)
+
+
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 21:48:38 -0500
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.7ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.8ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.7ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 43ms (Views: 38.9ms | ActiveRecord: 3.1ms | Allocations: 10939)
+
+
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 21:49:35 -0500
+  [1m[35m (24.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.5ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 260ms (Views: 228.7ms | ActiveRecord: 4.0ms | Allocations: 22403)
+
+
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 21:49:37 -0500
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.5ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.5ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 29.2ms | ActiveRecord: 2.1ms | Allocations: 10959)
+
+
+Started POST "/api/v1/posts" for ::1 at 2021-03-07 21:49:52 -0500
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"username"=>"huda", "caption"=>"oj;lkmkl;knlkn", "img_src"=>"https://i.pinimg.com/originals/fa/24/64/fa2464e36b98b2b1311f69d90e27af86.png", "cuisine_id"=>1, "post"=>{"username"=>"huda", "img_src"=>"https://i.pinimg.com/originals/fa/24/64/fa2464e36b98b2b1311f69d90e27af86.png", "caption"=>"oj;lkmkl;knlkn", "cuisine_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[36mPost Create (1.7ms)[0m  [1m[32mINSERT INTO "posts" ("username", "img_src", "caption", "cuisine_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "huda"], ["img_src", "https://i.pinimg.com/originals/fa/24/64/fa2464e36b98b2b1311f69d90e27af86.png"], ["caption", "oj;lkmkl;knlkn"], ["cuisine_id", 1], ["created_at", "2021-03-08 02:49:52.988978"], ["updated_at", "2021-03-08 02:49:52.988978"]]
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[35m (85.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+Completed 200 OK in 102ms (Views: 0.2ms | ActiveRecord: 88.0ms | Allocations: 5009)
+
+
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 21:50:02 -0500
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 29.3ms | ActiveRecord: 2.0ms | Allocations: 12179)
+
+
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 21:50:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (1.9ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 62ms (Views: 50.8ms | ActiveRecord: 7.5ms | Allocations: 21450)
+
+
+Started POST "/api/v1/posts" for ::1 at 2021-03-07 21:50:45 -0500
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"username"=>"skittles123", "caption"=>"ojnkjnkjn;", "img_src"=>"https://www.cookingclassy.com/wp-content/uploads/2018/08/enchiladas-12.jpg", "cuisine_id"=>1, "post"=>{"username"=>"skittles123", "img_src"=>"https://www.cookingclassy.com/wp-content/uploads/2018/08/enchiladas-12.jpg", "caption"=>"ojnkjnkjn;", "cuisine_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[36mPost Create (1.4ms)[0m  [1m[32mINSERT INTO "posts" ("username", "img_src", "caption", "cuisine_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "skittles123"], ["img_src", "https://www.cookingclassy.com/wp-content/uploads/2018/08/enchiladas-12.jpg"], ["caption", "ojnkjnkjn;"], ["cuisine_id", 1], ["created_at", "2021-03-08 02:50:45.969887"], ["updated_at", "2021-03-08 02:50:45.969887"]]
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[35m (136.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+Completed 200 OK in 147ms (Views: 0.5ms | ActiveRecord: 137.9ms | Allocations: 4156)
+
+
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 21:50:50 -0500
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.8ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (2.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 48ms (Views: 42.0ms | ActiveRecord: 5.1ms | Allocations: 13379)
+
+
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 21:51:02 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.5ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (1.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 71ms (Views: 60.3ms | ActiveRecord: 6.7ms | Allocations: 22624)
+
+
+Started POST "/api/v1/posts" for ::1 at 2021-03-07 21:51:10 -0500
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"username"=>"skittles123", "caption"=>"ADSADSASDVDSVDASV", "img_src"=>"https://i.pinimg.com/originals/fa/24/64/fa2464e36b98b2b1311f69d90e27af86.png", "cuisine_id"=>1, "post"=>{"username"=>"skittles123", "img_src"=>"https://i.pinimg.com/originals/fa/24/64/fa2464e36b98b2b1311f69d90e27af86.png", "caption"=>"ADSADSASDVDSVDASV", "cuisine_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[36mPost Create (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("username", "img_src", "caption", "cuisine_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "skittles123"], ["img_src", "https://i.pinimg.com/originals/fa/24/64/fa2464e36b98b2b1311f69d90e27af86.png"], ["caption", "ADSADSASDVDSVDASV"], ["cuisine_id", 1], ["created_at", "2021-03-08 02:51:10.319984"], ["updated_at", "2021-03-08 02:51:10.319984"]]
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[35m (127.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+Completed 200 OK in 147ms (Views: 4.0ms | ActiveRecord: 129.7ms | Allocations: 4998)
+
+
+Started DELETE "/api/v1/posts/56" for ::1 at 2021-03-07 21:51:14 -0500
+Processing by Api::V1::PostsController#destroy as */*
+  Parameters: {"id"=>"56"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:31:in `set_post'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+  [1m[36mPost Destroy (1.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 56]]
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 16.6ms | Allocations: 3469)
+
+
+Started DELETE "/api/v1/posts/55" for ::1 at 2021-03-07 21:51:16 -0500
+Processing by Api::V1::PostsController#destroy as */*
+  Parameters: {"id"=>"55"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:31:in `set_post'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+  [1m[36mPost Destroy (2.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 55]]
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+  [1m[35m (34.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+Completed 200 OK in 59ms (Views: 0.4ms | ActiveRecord: 37.4ms | Allocations: 3669)
+
+
+Started DELETE "/api/v1/posts/53" for ::1 at 2021-03-07 21:51:18 -0500
+Processing by Api::V1::PostsController#destroy as */*
+  Parameters: {"id"=>"53"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:31:in `set_post'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+  [1m[36mPost Destroy (1.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 53]]
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+  [1m[35m (35.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+Completed 200 OK in 48ms (Views: 0.4ms | ActiveRecord: 38.1ms | Allocations: 3720)
+
+
+Started DELETE "/api/v1/posts/54" for ::1 at 2021-03-07 21:51:19 -0500
+Processing by Api::V1::PostsController#destroy as */*
+  Parameters: {"id"=>"54"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:31:in `set_post'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+  [1m[36mPost Destroy (2.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 54]]
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+  [1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:24:in `destroy'
+Completed 200 OK in 33ms (Views: 0.5ms | ActiveRecord: 21.3ms | Allocations: 3333)
+
+
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 21:52:27 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.5ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 50ms (Views: 41.7ms | ActiveRecord: 4.2ms | Allocations: 21182)
+
+
+Started POST "/api/v1/posts" for ::1 at 2021-03-07 21:52:35 -0500
+Processing by Api::V1::PostsController#create as */*
+  Parameters: {"username"=>"skittles123", "caption"=>"XVXZCXVZCXCVCXVX", "img_src"=>"https://www.cookingclassy.com/wp-content/uploads/2018/08/enchiladas-12.jpg", "cuisine_id"=>1, "post"=>{"username"=>"skittles123", "img_src"=>"https://www.cookingclassy.com/wp-content/uploads/2018/08/enchiladas-12.jpg", "caption"=>"XVXZCXVZCXCVCXVX", "cuisine_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[36mPost Create (1.9ms)[0m  [1m[32mINSERT INTO "posts" ("username", "img_src", "caption", "cuisine_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "skittles123"], ["img_src", "https://www.cookingclassy.com/wp-content/uploads/2018/08/enchiladas-12.jpg"], ["caption", "XVXZCXVZCXCVCXVX"], ["cuisine_id", 1], ["created_at", "2021-03-08 02:52:35.706373"], ["updated_at", "2021-03-08 02:52:35.706373"]]
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+  [1m[35m (44.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:18:in `create'
+Completed 200 OK in 80ms (Views: 0.4ms | ActiveRecord: 46.7ms | Allocations: 4758)
+
+
+Started GET "/api/v1/posts" for ::1 at 2021-03-07 21:52:43 -0500
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 2.0ms | Allocations: 10959)
+
+

@@ -5,6 +5,22 @@ class PostList {
         this.all = posts    
     }
 
+    async newPost(e){
+        e.preventDefault()
+        const username = document.querySelector('#input-name').value
+        const caption = document.querySelector('#input-caption').value
+        const img_src = document.getElementById("img-src").value
+        const cuisineInput = document.querySelector('#cuisine')
+        const cuisine_id = parseInt(cuisineInput.value)
+        const cuisineName = cuisineInput.options[cuisineInput.selectedIndex].textContent
+        const postForm = document.querySelector("#post-form")
+        const API = new ApiService()   
+        const post = await API.newPost({username, caption, img_src, cuisine_id})//wait to crfeate a new post on server
+    
+        this.add(post, {name: cuisineName})
+        postForm.reset()
+    }
+    
      add(post, cuisine){
         const newPost = new Post(post, {cuisine}) 
         this.all.unshift(newPost)
@@ -42,20 +58,6 @@ class PostList {
         return new PostList(posts, container) 
     }
 
-    async newPost(e){
-        e.preventDefault()
-        const username = document.querySelector('#input-name').value
-        const caption = document.querySelector('#input-caption').value
-        const img_src = document.getElementById("img-src").value
-        const cuisineInput = document.querySelector('#cuisine')
-        const cuisine_id = parseInt(cuisineInput.value)
-        const cuisineName = cuisineInput.options[cuisineInput.selectedIndex].textContent
-        const postForm = document.querySelector("#post-form")
-        const API = new ApiService()   
-        const post = await API.newPost({username, caption, img_src, cuisine_id})//wait to crfeate a new post on server
-    
-        this.add(post, {name: cuisineName})
-        postForm.reset()
-    }
+
   
 }

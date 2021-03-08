@@ -8,9 +8,10 @@ class Api::V1::PostsController < ApplicationController
     render json: PostSerializer.new(@posts)
   end
 
-  def show
-    render json: @post
-  end
+  # def show
+  #   render json: @post
+    
+  # end
 
   def create
     @post = Post.new(post_params)
