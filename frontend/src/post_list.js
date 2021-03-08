@@ -4,6 +4,13 @@ class PostList {
         this.container = container 
         this.all = posts    
     }
+    
+    static async create(container){ 
+        const API = new ApiService()
+        const res = await API.fetchPosts() 
+        const posts = res.map(post => new Post(post, post.attributes)) 
+        return new PostList(posts, container) 
+    }
 
     async newPost(e){
         e.preventDefault()
@@ -21,19 +28,13 @@ class PostList {
         postForm.reset()
     }
 
-    static async create(container){ 
-        const API = new ApiService()
-        const res = await API.fetchPosts() 
-        const posts = res.map(post => new Post(post, post.attributes)) 
-        return new PostList(posts, container) 
-    }
-
-     add(post, cuisine){
+    add(post, cuisine){
         const newPost = new Post(post, {cuisine}) 
         this.all.unshift(newPost)
         this.render()
     }
 
+  
     render(){     
         this.container.innerHTML = "" 
         this.posts.forEach( post => this.container.innerHTML += post.renderPostCard())
