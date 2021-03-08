@@ -10,7 +10,7 @@ Open a new terminal and change directory to the Backend by typing ‘cd backend�
 Frontend:
 Open a second terminal and change directory to the frontend by typing ‘cd frontend’
     -For windows users type, ‘explorer.exe index.html’
-    -For mac users type, ‘index.html’
+    -For mac users type, ‘open index.html’
 
 This will open a window to the InstaLunch Web Application. You are now ready to join the fun!
 
