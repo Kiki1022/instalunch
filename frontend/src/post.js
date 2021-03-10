@@ -1,14 +1,14 @@
 class Post {
    
-    constructor(post, postAttributes = {}){
+    constructor(post, postAttributes){
       
         this.id = post.id
 
-        this.username = postAttributes.username || post.username
-        this.img_src = postAttributes.img_src || post.img_src
-        this.caption = postAttributes.caption || post.caption
-        this.cuisine = postAttributes.cuisine || post.cuisine
-        this.created_at = postAttributes.created_at || post.created_at
+        this.username = postAttributes.username 
+        this.img_src = postAttributes.img_src 
+        this.caption = postAttributes.caption 
+        this.cuisine = postAttributes.cuisine 
+        this.created_at = postAttributes.created_at 
      
     }
 
