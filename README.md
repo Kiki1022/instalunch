@@ -14,8 +14,6 @@ Open a second terminal and change directory to the frontend by typing ‘cd fron
 
 This will open a window to the InstaLunch Web Application. You are now ready to join the fun!
 
-Contributing Bug reports and pull requests are welcome on GitHub at https://github.com/Kiki1022/instalunch.git
-This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct https://github.com/Kiki1022/instalunch/blob/main/CONTRIBUTING.md
-License The gem is available as open source under the terms of the MIT License https://opensource.org/licenses/MIT
+
 
  
